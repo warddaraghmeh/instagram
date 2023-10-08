@@ -1,4 +1,5 @@
 import React, { useState } from "react";
+import { Link, Outlet } from "react-router-dom";
 import AppBar from "@mui/material/AppBar";
 import Box from "@mui/material/Box";
 import CssBaseline from "@mui/material/CssBaseline";
@@ -20,7 +21,7 @@ import ChatIcon from "@mui/icons-material/Chat";
 import FavoriteBorderIcon from "@mui/icons-material/FavoriteBorder";
 import AccountCircleIcon from "@mui/icons-material/AccountCircle";
 import AddCircleOutlineOutlinedIcon from "@mui/icons-material/AddCircleOutlineOutlined";
-import { Grid, Link } from "@mui/material";
+import { Grid } from "@mui/material";
 import { instagram } from "./SVGInsta";
 
 const drawerWidth = 240;
@@ -58,32 +59,32 @@ function ResponsiveDrawer() {
           },
           {
             text: "Search",
-            icon: <SearchIcon sx={getListItemIconStyle()} />,
+            icon: <SearchIcon style={{ color: "white" }} />,
             path: "/",
           },
           {
             text: "Explore",
-            icon: <ExploreIcon sx={getListItemIconStyle()} />,
-            path: "/",
+            icon: <ExploreIcon style={{ color: "white" }} />,
+            path: "/explore",  
           },
           {
             text: "Reels",
-            icon: <SlideshowIcon sx={getListItemIconStyle()} />,
+            icon: <SlideshowIcon style={{ color: "white" }} />,
             path: "/",
           },
           {
             text: "Messages",
-            icon: <ChatIcon sx={getListItemIconStyle()} />,
+            icon: <ChatIcon style={{ color: "white" }} />,
             path: "/",
           },
           {
             text: "Notifications",
-            icon: <FavoriteBorderIcon sx={getListItemIconStyle()} />,
+            icon: <FavoriteBorderIcon style={{ color: "white" }} />,
             path: "/",
           },
           {
             text: "Create",
-            icon: <AddCircleOutlineOutlinedIcon sx={getListItemIconStyle()} />,
+            icon: <AddCircleOutlineOutlinedIcon style={{ color: "white" }} />,
             path: "/",
           },
         ].map((item, index) => (
@@ -102,7 +103,7 @@ function ResponsiveDrawer() {
         <ListItem key="Profile" disablePadding>
           <ListItemButton>
             <ListItemIcon>
-              <AccountCircleIcon sx={getListItemIconStyle()} />
+              <AccountCircleIcon style={{ color: "white" }} />
             </ListItemIcon>
             <ListItemText primary="Profile" />
           </ListItemButton>
@@ -189,6 +190,7 @@ function ResponsiveDrawer() {
         >
           <Toolbar />
           <Typography paragraph></Typography>
+          <Outlet />
         </Box>
       </Box>
     </Grid>
